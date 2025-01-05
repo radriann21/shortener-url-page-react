@@ -21,6 +21,12 @@ export default {
           'very-dark-violet': 'hsl(260, 8%, 14%)',
         }
       },
+      backgroundImage: {
+        'boost-pattern-desktop': 'url("./assets/images/bg-boost-desktop.svg")',
+        'boost-pattern-mobile': 'url("./assets/images/bg-boost-mobile.svg")',
+        'shorten-pattern-desktop': 'url("./assets/images/bg-shorten-desktop.svg")',
+        'shorten-pattern-mobile': 'url("./assets/images/bg-shorten-mobile.svg")'
+      },
       fontFamily: {
         primaryRegular: ['Regular'],
         primaryBold: ['Bold']

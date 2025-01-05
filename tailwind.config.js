@@ -22,8 +22,8 @@ export default {
         }
       },
       fontFamily: {
-        regular: ['Regular'],
-        bold: ['Bold']
+        primaryRegular: ['Regular'],
+        primaryBold: ['Bold']
       }
     },
   },

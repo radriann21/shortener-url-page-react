@@ -1,8 +1,11 @@
+import { Header } from "./components/Header";
 function App() {
   return (
-    <h1 className="text-3xl font-regular text-red-600 font-global">
-      hello world
-    </h1>
+    <main className="max-w-full min-h-screen bg-white overflow-hidden relative">
+      <section className="max-w-7xl mx-auto p-8 md:p-12">
+        <Header />
+      </section>
+    </main>
   );
 }
 

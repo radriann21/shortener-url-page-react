@@ -1,16 +1,25 @@
 import PropTypes from "prop-types";
 import { useState, createContext } from "react";
+import { getShortedURL } from "../services/getShortedURL";
 
 export const ShortenContext = createContext({});
 
 export const ShortenContextProvider = ({ children }) => {
   const [url, setUrl] = useState("");
+  const [shortedUrl, setShortedUrl] = useState(null);
   const [error, setError] = useState(false);
 
   const handleInputUrl = (evt) => {
     const userUrl = evt.target.value;
     setUrl(userUrl);
-    console.log(url);
+  };
+
+  const getUrl = async (url) => {
+    const data = await getShortedURL(url);
+
+    if (data) {
+      setShortedUrl(data.result_url);
+    }
   };
 
   const handleSubmit = () => {
@@ -20,6 +29,7 @@ export const ShortenContextProvider = ({ children }) => {
 
     if (urlPattern.test(url)) {
       setError(false);
+      getUrl(url);
     } else {
       setError(true);
       return;
@@ -28,7 +38,7 @@ export const ShortenContextProvider = ({ children }) => {
 
   return (
     <ShortenContext.Provider
-      value={{ url, error, handleInputUrl, handleSubmit }}
+      value={{ url, error, handleInputUrl, handleSubmit, shortedUrl }}
     >
       {children}
     </ShortenContext.Provider>

@@ -24,7 +24,7 @@ export const Header = () => {
       <img src={logo} alt="logo of shortly" />
       <div
         ref={menuRef}
-        className="absolute sm:relative top-0 flex flex-col sm:flex-row items-center justify-between w-[280px] sm:w-full bg-primary-dark-violet rounded-lg sm:rounded-none p-8 sm:p-0 sm:bg-transparent -translate-y-full sm:translate-y-0 transition-transform duration-300"
+        className="absolute sm:relative top-0 inset-x-0 flex flex-col sm:flex-row items-center justify-between w-[280px] sm:w-full bg-primary-dark-violet rounded-lg sm:rounded-none p-8 sm:p-0 sm:bg-transparent -translate-y-full sm:translate-y-0 transition-transform duration-300"
       >
         <ul className="list-none flex flex-col sm:flex-row items-center sm:space-x-8 font-bold text-white sm:text-neutral-grayish-violet space-y-4 sm:space-y-0">
           {menu.map((item, index) => (

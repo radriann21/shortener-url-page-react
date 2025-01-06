@@ -34,15 +34,15 @@ export const DisplayLinks = () => {
           className="w-full p-4 bg-white rounded-md shadow-md flex flex-col sm:flex-row items-center justify-between"
           key={index}
         >
-          <div className="font-primaryRegular text-neutral-very-dark-violet">
+          <div className="font-primaryRegular text-neutral-very-dark-violet ">
             {shorted.longUrl}
           </div>
           <div className="mt-4 sm:mt-0 flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 space-x-0 sm:space-x-8">
             <span className="text-primary-custom-cyan font-primaryRegular">
-              {shorted.result_url}
+              {shorted.shortUrl}
             </span>
             <button
-              onClick={() => copyToClipboard(shorted.result_url, index)}
+              onClick={() => copyToClipboard(shorted.shortUrl, index)}
               className={`w-full sm:w-fit py-2 px-6 text-white bg-primary-custom-cyan rounded-md transition-colors duration-300 hover:bg-opacity-60 ${
                 copiedIndex === index ? "bg-primary-dark-violet" : null
               }`}

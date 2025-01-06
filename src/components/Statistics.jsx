@@ -18,7 +18,7 @@ export const Statistics = () => {
         </p>
       </div>
 
-      <div className="w-full sm:w-[80%] mt-20 flex flex-col sm:flex-row items-center justify-center space-x-0 space-y-20 sm:space-y-0 sm:space-x-12 mx-auto relative">
+      <div className="w-full sm:w-[80%] mt-20 sm:mt-36 sm:mb-20 flex flex-col sm:flex-row items-center justify-center space-x-0 space-y-20 sm:space-y-0 sm:space-x-12 mx-auto">
         <div className="hidden w-[80%] h-4 bg-primary-custom-cyan rounded-full absolute top-20"></div>
         <StatisticsCard
           title="Brand Recognition"
@@ -28,7 +28,7 @@ export const Statistics = () => {
         <StatisticsCard
           title="Detailed Records"
           text="Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
-          margin="mt-8"
+          margin="mt-20"
           icon={iconDetailed}
         />
         <StatisticsCard

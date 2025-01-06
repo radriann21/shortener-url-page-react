@@ -1,30 +1,29 @@
 export const getShortedURL = async (url) => {
-  const API_URL = import.meta.env.VITE_API_URL
+  const API_URL = import.meta.env.VITE_API_URL;
+  const API_KEY = import.meta.env.VITE_API_KEY;
+
   try {
-    const res = await fetch(API_URL, {
+    const headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'x-api-key': API_KEY
+    };
+
+    const response = await fetch(API_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: new URLSearchParams({
-        'url': url
+      headers,
+      body: JSON.stringify({
+        url: url,
+        expiry: '5m'
       })
     });
 
-    if (!res.ok) {
-      return {
-        error: true,
-        message: res.statusText
-      };
-    }
-
-    const data = await res.json();
+    const data = await response.json();
     return data;
-
   } catch (err) {
-    return {
-      error: true,
-      message: err.message
-    };
+    console.log('Error:', err.message);
   }
 };
+
+
+

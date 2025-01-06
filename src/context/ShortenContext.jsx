@@ -18,11 +18,13 @@ export const ShortenContextProvider = ({ children }) => {
     const data = await getShortedURL(url);
 
     if (data) {
-      const shortenedUrl = {
-        longUrl: url,
-        result_url: data.result_url,
-      };
-      setShortedUrls((prevState) => [...prevState, shortenedUrl]);
+      setShortedUrls((prevState) => {
+        const newUrl = {
+          longUrl: data.url,
+          shortUrl: data.shortUrl,
+        };
+        return [...prevState, newUrl];
+      });
     }
   };
 

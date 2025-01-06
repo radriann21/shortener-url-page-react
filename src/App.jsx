@@ -2,6 +2,7 @@ import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Statistics } from "./components/Statistics";
 import { BoostLinks } from "./components/BoostLinks";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </section>
       <Statistics />
       <BoostLinks />
+      <Footer />
     </main>
   );
 }

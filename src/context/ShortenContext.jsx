@@ -6,7 +6,7 @@ export const ShortenContext = createContext({});
 
 export const ShortenContextProvider = ({ children }) => {
   const [url, setUrl] = useState("");
-  const [shortedUrl, setShortedUrl] = useState(null);
+  const [shortedUrls, setShortedUrls] = useState([]);
   const [error, setError] = useState(false);
 
   const handleInputUrl = (evt) => {
@@ -18,7 +18,11 @@ export const ShortenContextProvider = ({ children }) => {
     const data = await getShortedURL(url);
 
     if (data) {
-      setShortedUrl(data.result_url);
+      const shortenedUrl = {
+        longUrl: url,
+        result_url: data.result_url,
+      };
+      setShortedUrls((prevState) => [...prevState, shortenedUrl]);
     }
   };
 
@@ -38,7 +42,7 @@ export const ShortenContextProvider = ({ children }) => {
 
   return (
     <ShortenContext.Provider
-      value={{ url, error, handleInputUrl, handleSubmit, shortedUrl }}
+      value={{ url, error, handleInputUrl, handleSubmit, shortedUrls }}
     >
       {children}
     </ShortenContext.Provider>

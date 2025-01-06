@@ -10,8 +10,8 @@ export const LinksInput = () => {
         <div className="w-full sm:w-[80%] relative">
           <input
             onChange={handleInputUrl}
-            className={`outline-none w-full rounded-md p-2 placeholder:text-neutral-grayish-violet placeholder:font-primaryRegular placeholder:text-sm ${
-              error ? "border-2 border-red-600" : null
+            className={`outline-none w-full rounded-md p-2 placeholder:text-neutral-grayish-violet placeholder:font-primaryRegular placeholder:text-sm border-2 ${
+              error ? "border-red-600" : null
             }`}
             type="text"
             placeholder="Shorten a link here..."

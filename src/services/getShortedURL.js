@@ -14,7 +14,7 @@ export const getShortedURL = async (url) => {
       headers,
       body: JSON.stringify({
         url: url,
-        expiry: 'never'
+        expiry: '5m'
       })
     });
 
